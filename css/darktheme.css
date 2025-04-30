@@ -1,0 +1,88 @@
+body,
+aside {
+   background-color: #1b1f3a;
+   color: #e0e0e0;
+}
+
+#main-header {
+   background-color: #161a30;
+}
+
+.logo span {
+   color: #d32f2f;
+}
+
+#main-nav ul li:hover {
+   color: #d32f2f;
+   text-shadow: 0 0 1px #0f1224;
+}
+
+.rating {
+   background-color: #d32f2f;
+}
+
+.movie-info {
+   background-color: #161a30;
+}
+
+.movie-name {
+   color: #d32f2f;
+}
+
+.add-favorites-btn {
+   color: #e0e0e0;
+}
+
+#description-container {
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.description {
+   background-color: #161a30;
+   border: 1px solid #e0e0e0;
+}
+
+.close-btn:hover {
+   background-color: #d32f2f;
+}
+
+form {
+   background: radial-gradient(circle, #494d75 0%, #242850 60%, #161a30 100%);
+}
+
+.movie-description-btn,
+#add-movie-btn,
+#edit-movie-btn {
+   background-color: #d32f2f;
+   color: #e0e0e0;
+}
+
+.delete:hover {
+   background-color: #7e1616;
+}
+
+.movie-description-btn:hover,
+#add-movie-btn:hover,
+#edit-movie-btn:hover,
+.edit:hover {
+   background-color: #e0e0e0;
+   color: #161a30;
+}
+
+.settings {
+   outline: 3px solid #e0e0e0;
+}
+
+.options li:hover {
+   background-color: #e0e0e0;
+   color: #161a30;
+}
+
+.favorites svg,
+.warning {
+   color: #d32f2f;
+}
+
+.close-options-menu {
+   color: #d32f2f;
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Movie world</title>
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="/favicon_io/apple-touch-icon.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="/favicon_io/favicon-32x32.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="16x16"
+         href="/favicon_io/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="css/main.css" />
+      <link id="theme" rel="stylesheet" href="css/darktheme.css" />
+   </head>
+   <body>
+      <header id="main-header">
+         <h1 class="logo" id="main-logo">Movie <span>World</span></h1>
+         <nav id="main-nav">
+            <ul>
+               <li class="movie-list-view">Movie List</li>
+               <li class="favorite-movies-view-btn">Favorite Movies</li>
+               <li id="search-input">
+                  <input
+                     type="search"
+                     name="main-search"
+                     id="mainsearch"
+                     title="Search movies"
+                  />
+                  <label for="mainsearch">
+                     <svg
+                        data-slot="icon"
+                        fill="none"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                     >
+                        <path
+                           stroke-linecap="round"
+                           stroke-linejoin="round"
+                           d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                        ></path>
+                     </svg>
+                  </label>
+               </li>
+            </ul>
+         </nav>
+         <nav id="phone-nav">
+            <h1 class="logo">Movie <span>World</span></h1>
+            <ul id="burger-menu">
+               <li></li>
+               <li></li>
+               <li></li>
+            </ul>
+         </nav>
+      </header>
+      <main>
+         <div id="description-container">
+            <div class="description">
+               <div class="close-btn">
+                  <svg
+                     data-slot="icon"
+                     fill="none"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true"
+                  >
+                     <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18 18 6M6 6l12 12"
+                     ></path>
+                  </svg>
+               </div>
+               <h2>Movie Description</h2>
+               <p id="movie-description-window"></p>
+            </div>
+         </div>
+         <section class="movie-list"></section>
+         <section class="add-movies">
+            <h2>Add Movies</h2>
+            <form action="">
+               <ul id="add-movie-form">
+                  <li class="w-100">
+                     <label for="imageinput">Select image:</label>
+                     <input
+                        type="file"
+                        name="image-input"
+                        id="imageinput"
+                        accept="image/*"
+                        title="Choose the movie's picture"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="moviename">Type Movie Name:</label>
+                     <input
+                        type="text"
+                        namw
+                        placeholder="Movie Name"
+                        name="movie-name"
+                        id="moviename"
+                        title="Enter the movie's name"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="movieganre">Input Movie Genre</label>
+                     <input
+                        type="text"
+                        name="movie-genre"
+                        id="moviegenre"
+                        title="Input which genre is the movie"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="duration">Movie Duration</label>
+                     <input
+                        type="number"
+                        name="duration"
+                        id="duration"
+                        title="How long is the movie?"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="movierating">Input Movie Rating:</label>
+                     <input
+                        type="number"
+                        min="0"
+                        max="10"
+                        step="0.1"
+                        name="movie-rating"
+                        id="movierating"
+                        title="Enter the movie's rating"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="released">Release Year:</label>
+                     <input
+                        type="number"
+                        name="released"
+                        id="released"
+                        title="Enter the movie's release date"
+                        required
+                     />
+                  </li>
+                  <li class="form-info w-100">
+                     <label for="movieinfo">Movie Info:</label>
+                     <textarea
+                        name="movie-info"
+                        id="movieinfo"
+                        maxlength="500"
+                        title="Enter the movie's description"
+                        required
+                     ></textarea>
+                  </li>
+                  <li>
+                     <button type="submit" id="add-movie-btn">ADD Movie</button>
+                  </li>
+               </ul>
+            </form>
+         </section>
+         <section id="edit-movies">
+            <h2>Edit Movies</h2>
+            <form action="">
+               <ul id="add-movie-form">
+                  <li class="w-100">
+                     <label for="imageinput">Select image:</label>
+                     <input
+                        type="file"
+                        name="image-input"
+                        id="e-imageinput"
+                        accept="image/*"
+                        title="Choose the movie's picture"
+                        required
+                     />
+                     <p class="warning">
+                        *If you are not changing the image, please re-upload the
+                        previous image.
+                     </p>
+                  </li>
+                  <li class="w-100">
+                     <label for="moviename">Type Movie Name:</label>
+                     <input
+                        type="text"
+                        namw
+                        placeholder="Movie Name"
+                        name="movie-name"
+                        id="e-moviename"
+                        title="Enter the movie's name"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="movieganre">Input Movie Genre</label>
+                     <input
+                        type="text"
+                        name="movie-genre"
+                        id="e-moviegenre"
+                        title="Input which genre is the movie"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="duration">Movie Duration</label>
+                     <input
+                        type="number"
+                        name="duration"
+                        id="e-duration"
+                        title="How long is the movie?"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="movierating">Input Movie Rating:</label>
+                     <input
+                        type="number"
+                        min="0"
+                        max="10"
+                        step="0.1"
+                        name="movie-rating"
+                        id="e-movierating"
+                        title="Enter the movie's rating"
+                        required
+                     />
+                  </li>
+                  <li class="w-100">
+                     <label for="released">Release Year:</label>
+                     <input
+                        type="number"
+                        name="released"
+                        id="e-released"
+                        title="Enter the movie's release date"
+                        required
+                     />
+                  </li>
+                  <li class="form-info w-100">
+                     <label for="movieinfo">Movie Info:</label>
+                     <textarea
+                        name="movie-info"
+                        id="e-movieinfo"
+                        maxlength="500"
+                        title="Enter the movie's description"
+                        required
+                     ></textarea>
+                  </li>
+                  <li>
+                     <button type="submit" id="edit-movie-btn">UPDATE</button>
+                  </li>
+               </ul>
+            </form>
+         </section>
+         <div class="settings">
+            <svg
+               data-slot="icon"
+               fill="none"
+               stroke-width="1.5"
+               stroke="currentColor"
+               viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg"
+               aria-hidden="true"
+            >
+               <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"
+               ></path>
+               <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+               ></path>
+            </svg>
+            <div class="options">
+               <ul>
+                  <li class="theme-changes">Change Theme</li>
+                  <li class="adding-movies">Add Movies</li>
+                  <li class="editing-movies">Edit Movies</li>
+               </ul>
+            </div>
+         </div>
+         <section id="edit-delete-view">
+            <h3>Edit/Delete</h3>
+            <div id="edit-delete-cards"></div>
+         </section>
+         <section id="favorite-movies-view"></section>
+         <aside>
+            <ul>
+               <li class="movie-list-view">Movie List</li>
+               <li class="favorite-movies-view-btn">Favorite Movies</li>
+               <li class="adding-movies">Add Movies</li>
+               <li class="editing-movies">Edit Movies</li>
+               <li class="theme-changes">Change Theme</li>
+               <li class="close-options-menu">Close Options Menu</li>
+            </ul>
+         </aside>
+      </main>
+      <script src="js/db.js"></script>
+      <script src="js/main.js"></script>
+   </body>
+</html>
