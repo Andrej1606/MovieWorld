@@ -226,7 +226,7 @@ function displayFavoriteMoviesView(e) {
     if (filtered.length > 0) {
         createMovieCard(filtered, favoriteMoviesView, solid);
     } else {
-        favoriteMoviesView.innerHTML = "<p>No favorites added yet.</p>";
+        favoriteMoviesView.innerHTML = "<p class='no-favorites'>No favorites added yet.</p>";
     }
     movieList.style.display = 'none';
     description.style.display = "none"
